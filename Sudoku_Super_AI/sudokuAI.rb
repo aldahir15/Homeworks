@@ -1,6 +1,3 @@
-################
-# Sudoku Solver
-################
 require_relative 'board'
 
 def solver(board)
