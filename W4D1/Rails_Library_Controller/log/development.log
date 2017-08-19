@@ -1,0 +1,439 @@
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:00:39 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/louiscruz/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/louiscruz/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (8.3ms)
+Completed 200 OK in 708ms (Views: 25.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:00:47 -0700
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NameError (uninitialized constant BooksController::Book):
+  
+app/controllers/books_controller.rb:3:in `index'
+  [1m[35m (61.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170713170142)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170713170142)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170713170142"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-13 17:04:33.834685"], ["updated_at", "2017-07-13 17:04:33.834685"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:04 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/louiscruz/Desktop/app-academy-repos/curriculum/rails/homeworks/library/solution/app/views"
+):
+  
+app/controllers/books_controller.rb:7:in `index'
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:33 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 903ms (Views: 887.4ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-07-13 10:05:38 -0700
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:57 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 364ms (Views: 340.8ms | ActiveRecord: 4.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Harry Potter and the Order of the Phoenix"], ["author", "J.K. Rowling"], ["created_at", "2017-07-13 17:06:17.207858"], ["updated_at", "2017-07-13 17:06:17.207858"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost Names"], ["author", "Richard E. Kim"], ["created_at", "2017-07-13 17:06:17.214110"], ["updated_at", "2017-07-13 17:06:17.214110"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Extremely Loud and Incredibly Close"], ["author", "Jonathan Safran Foer"], ["created_at", "2017-07-13 17:06:17.218872"], ["updated_at", "2017-07-13 17:06:17.218872"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Man Alive"], ["author", "Thomas Page McBee"], ["created_at", "2017-07-13 17:06:17.223380"], ["updated_at", "2017-07-13 17:06:17.223380"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Argonauts"], ["author", "Maggie Nelson"], ["created_at", "2017-07-13 17:06:17.228339"], ["updated_at", "2017-07-13 17:06:17.228339"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A Little Life"], ["author", "Hanya Yanagihara"], ["created_at", "2017-07-13 17:06:17.233093"], ["updated_at", "2017-07-13 17:06:17.233093"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Sovereignty of Quiet"], ["author", "Kevin Everod Quashie"], ["created_at", "2017-07-13 17:06:17.238373"], ["updated_at", "2017-07-13 17:06:17.238373"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Redefining Realness"], ["author", "Janet Mock"], ["created_at", "2017-07-13 17:06:17.243690"], ["updated_at", "2017-07-13 17:06:17.243690"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:06:34 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 290ms (Views: 267.7ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-07-13 10:06:42 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BucOrDSQQzrYnFs2vg2QfkljN4q5ySll8BM6/zjZSJeBHmq0n2Vple4x8aVxJSPyepEMhaxtp4vIow5tDNrEVA==", "id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 12ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:06:42 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (249.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170713170142)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170713170142"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-19 22:19:47.900827"], ["updated_at", "2017-08-19 22:19:47.900827"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Harry Potter and the Order of the Phoenix"], ["author", "J.K. Rowling"], ["created_at", "2017-08-19 22:19:55.530525"], ["updated_at", "2017-08-19 22:19:55.530525"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost Names"], ["author", "Richard E. Kim"], ["created_at", "2017-08-19 22:19:55.535546"], ["updated_at", "2017-08-19 22:19:55.535546"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Extremely Loud and Incredibly Close"], ["author", "Jonathan Safran Foer"], ["created_at", "2017-08-19 22:19:55.537393"], ["updated_at", "2017-08-19 22:19:55.537393"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Man Alive"], ["author", "Thomas Page McBee"], ["created_at", "2017-08-19 22:19:55.539062"], ["updated_at", "2017-08-19 22:19:55.539062"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Argonauts"], ["author", "Maggie Nelson"], ["created_at", "2017-08-19 22:19:55.540562"], ["updated_at", "2017-08-19 22:19:55.540562"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A Little Life"], ["author", "Hanya Yanagihara"], ["created_at", "2017-08-19 22:19:55.541983"], ["updated_at", "2017-08-19 22:19:55.541983"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Sovereignty of Quiet"], ["author", "Kevin Everod Quashie"], ["created_at", "2017-08-19 22:19:55.543371"], ["updated_at", "2017-08-19 22:19:55.543371"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Redefining Realness"], ["author", "Janet Mock"], ["created_at", "2017-08-19 22:19:55.545018"], ["updated_at", "2017-08-19 22:19:55.545018"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBook Load (3.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started GET "/" for 127.0.0.1 at 2017-08-19 15:20:51 -0700
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/aldahir/.rvm/gems/ruby-2.4.1/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/aldahir/.rvm/gems/ruby-2.4.1/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (5.9ms)
+Completed 200 OK in 52ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:22:21 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Books</h1>
+    2: 
+    3: <ul>
+    4:   <% @books.each do |book| %>
+    5:     <li><%= book.title %> by <%= book.author %></li>
+    6:     <%= button_to "delete", book_url(book), method: :delete %>
+    7:     <br>
+  
+app/views/books/index.html.erb:4:in `_app_views_books_index_html_erb___47194404488432735_70112150716160'
+Started PUT "/__web_console/repl_sessions/195db9c06ab04430a32e6d247c9c5a60" for 127.0.0.1 at 2017-08-19 15:22:36 -0700
+Started PUT "/__web_console/repl_sessions/195db9c06ab04430a32e6d247c9c5a60" for 127.0.0.1 at 2017-08-19 15:22:37 -0700
+Started PUT "/__web_console/repl_sessions/195db9c06ab04430a32e6d247c9c5a60" for 127.0.0.1 at 2017-08-19 15:22:38 -0700
+  [1m[36mBook Load (4.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:23:02 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Books</h1>
+    2: 
+    3: <ul>
+    4:   <% @books.each do |book| %>
+    5:     <li><%= book.title %> by <%= book.author %></li>
+    6:     <%= button_to "delete", book_url(book), method: :delete %>
+    7:     <br>
+  
+app/views/books/index.html.erb:4:in `_app_views_books_index_html_erb___47194404488432735_70112125178680'
+app/controllers/books_controller.rb:4:in `index'
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:23:45 -0700
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant BooksController::Books):
+  
+app/controllers/books_controller.rb:4:in `index'
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:23:59 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Books</h1>
+    2: 
+    3: <ul>
+    4:   <% @books.each do |book| %>
+    5:     <li><%= book.title %> by <%= book.author %></li>
+    6:     <%= button_to "delete", book_url(book), method: :delete %>
+    7:     <br>
+  
+app/views/books/index.html.erb:4:in `_app_views_books_index_html_erb___47194404488432735_70112147521260'
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:24:18 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 516ms (Views: 507.1ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:15 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:16 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:17 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:17 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:17 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 78ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:17 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:18 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:18 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:25:18 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOB+9xssjnyvJHp1HHpYq839f/vkM/b8vPPczgGN84jUkP5LZuxHpYSWZo91/6cyzY3PU37Trpe+v3j500Q0pA==", "id"=>"1"}
+No template found for BooksController#destroy, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:27:59 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 55ms (Views: 44.9ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-08-19 15:28:01 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eUyURxrQIDeaPPhbF6cSZhd1qyz1W8DupwBC4cTJxPL9PBT7ZxDp7rGO5KF+Iu3/FwUbhG+7mIWlTObWFgAD3g==", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `index_url' for #<BooksController:0x007f8880b2dbc0>
+Did you mean?  index):
+  
+app/controllers/books_controller.rb:19:in `destroy'
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:28:14 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 48ms (Views: 37.1ms | ActiveRecord: 6.0ms)
+
+
+Started DELETE "/books/2" for 127.0.0.1 at 2017-08-19 15:28:16 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4vhL4Zh1SL5my/0cYrBIKE1CqS+6qYvxaicQaTn9YHpmiMtd5bWBZ0154eYLNbexTTIZhyBJ05poa7Re6zSnVg==", "id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+  [1m[36mCACHE Book Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Book::ActiveRecord_Relation:0x007f8885568078>
+Did you mean?  to_xml):
+  
+app/controllers/books_controller.rb:19:in `destroy'
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:28:45 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 38ms (Views: 29.2ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/books/3" for 127.0.0.1 at 2017-08-19 15:28:48 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nlNsZLUWPswdL1KQpEN95tGEnHsuXQiDDnLd9vPzjU0aI+zYyNb3FTadTmrNxoJ/0fQs07S9UOgMPnnBITpKYQ==", "id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 3]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 11ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:28:48 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:32:54 -0700
+  
+SyntaxError (/Users/aldahir/Desktop/aA/homeworks/W4D1/Rails_Library_Controller/app/controllers/books_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/books_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:32:59 -0700
+  
+SyntaxError (/Users/aldahir/Desktop/aA/homeworks/W4D1/Rails_Library_Controller/app/controllers/books_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/books_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:33:32 -0700
+  
+SyntaxError (/Users/aldahir/Desktop/aA/homeworks/W4D1/Rails_Library_Controller/app/controllers/books_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/books_controller.rb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:33:52 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 78ms (Views: 67.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-08-19 15:33:55 -0700
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 67ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-08-19 15:34:04 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"fDfFIZfdOTN8h6Nr61d5y+ai864a/vsn8icO2ASwwOf4R0Wd6h3w6lc1v5GC0oZS5tJDBoAeo0zwa6rv1nkHyw==", "book"=>{"title"=>"The Stranger", "author"=>"Albert Camus"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Stranger"], ["author", "Albert Camus"], ["created_at", "2017-08-19 22:34:04.115272"], ["updated_at", "2017-08-19 22:34:04.115272"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-08-19 15:34:04 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
