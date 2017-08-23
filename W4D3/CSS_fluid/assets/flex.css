@@ -114,11 +114,35 @@ label {
     display: block;
 }
 
+.ham-dp {
+  display: none;
+}
+
 @media (max-width: 900px) {
-  .facet_sidebar {
+  nav ul {
+    display: none;
+  }
+  .ham-dp {
     display: inline-block;
   }
-  li {
-    color: blue;
+  .ham-dp > li {
+    background: url(hamburger_icon.png);
+    background-size: 50px 50px;
+    position: relative;
+    width: 50px;
+    height: 50px;
   }
-}
+  .ham-dp ul {
+    top: 50px;
+    left: 0;
+    position: absolute;
+    flex-direction: column;
+  }
+
+  .ham-dp:hover ul {
+    display: flex;
+    background: white;
+    font-size: 75%;
+    text-decoration: underline;
+  }
+};
