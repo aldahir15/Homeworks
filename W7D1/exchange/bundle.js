@@ -9918,6 +9918,19 @@ module.exports = __webpack_require__(118);
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var selectCurrency = function selectCurrency(baseCurrency, rates) {
+  return {
+    type: "SWITCH_CURRENCY",
+    baseCurrency: baseCurrency,
+    rates: rates
+  };
+};
+
+exports.default = selectCurrency;
+
 /***/ }),
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -23668,7 +23681,15 @@ var reducer = function reducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
 
-  return state; // remove this and fill out the body of the reducer function
+  switch (action.type) {
+    case "SWITCH_CURRENCY":
+      return {
+        baseCurrency: action.baseCurrency,
+        rates: action.rates
+      };
+    default:
+      return state;
+  }
 };
 
 exports.default = reducer;
